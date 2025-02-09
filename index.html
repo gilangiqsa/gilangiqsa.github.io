@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="Savvina Drougouti" />
+
+    <title>Gilang Iqsa</title>
+    <!-- <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"> -->
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+      integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+      crossorigin="anonymous"
+    />
+
+    <!-- Google fonts for this template -->
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Poppins|Just+Another+Hand"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet" />
+
+    <!-- Additional Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css"
+    />
+    <style>
+      		.download-btn {
+			display: inline-block;
+			padding: 1px 30px;
+			background-color: #313131;
+			color: #fff;
+			text-decoration: none;
+			border-radius: 5px;
+			font-weight: bold;
+			text-align: center;
+			margin-top: px;
+		}
+
+		.download-btn:hover {
+			background-color: #bebcbc; /* Change color on hover */
+		}
+
+    .cert-image {
+			width: 300px;
+			height: auto;
+			margin-right: 8px;
+			border: 8px solid #242525; /* Blue border */
+			border-radius: 15px; /* Rounded corners */
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+			transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+		}
+
+		.cert-image:hover {
+			transform: scale(1.05); /* Slight zoom on hover */
+			box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+		}
+
+		.award-content {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			gap: 10px;
+		}
+
+		.certificate {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			max-width: 200px; /* Adjust as needed */
+			cursor: pointer;
+			transition: transform 0.3s ease-in-out, z-index 0s ease 0.3s;
+		}
+
+		.certificate img {
+			width: 100%;
+			height: auto;
+			border-radius: 8px;
+			transition: transform 0.3s ease-in-out;
+		}
+
+		.certificate h3 {
+			margin-top: 10px;
+			text-align: center;
+		}
+
+		.certificates-container {
+			display: flex;
+			justify-content: space-around;
+			gap: 20px;
+			flex-wrap: wrap;
+			margin-top: 20px;
+		}
+
+		.certificate.zoomed {
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1000;
+			margin: auto;
+			max-width: 100%;
+			max-height: 100%;
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.certificate.zoomed img {
+			transform: scale(0.75); /* Zoom in */
+			max-width: 90%;
+			max-height: 90%;
+		}
+
+		.certificate.zoomed h3 {
+			position: absolute;
+			top: 10%;
+			color: white;
+			font-size: 24px;
+			text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+		}
+
+		.certificate.zoomed:focus {
+			outline: none;
+		}
+    </style>
+  </head>
+
+  <body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger pl-2" href="#page-top">
+        <span class="d-none d-lg-block">
+          <img
+            class="img-fluid img-profile mb-3"
+            src="gilang.jpg"
+            alt="Profile Picture"
+          />
+        </span>
+      </a>
+      <button
+        class="navbar-toggler m-2"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse text-center"
+        id="navbarSupportedContent"
+      >
+        <ul class="navbar-nav d-block">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#experience"
+              >Experience</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education"
+              >Education</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#certificates"
+              >Certificates</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          </li>
+        </ul>
+
+        <div>
+          <ul
+            class="list-inline list-social-icons icon-circle icon-zoom mt-5 mb-0"
+          >
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/gilang-iqsa-mahendra-819a47309/" target="_blank" rel="noopener">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/GilangIqsaMahendra" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.facebook.com/gilang.wancit" target="_blank" rel="noopener">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.instagram.com/gilangiqsa_" target="_blank" rel="noopener">
+                <i class="fab fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+      <section class="resume-section p-3 p-lg-5" id="about">
+        <div class="my-auto">
+          <p class="mobile-name">
+            <img class="mobile-img" src="gilang.jpg" alt="Profile Picture" />
+          </p>
+          <p class="mobile-name">Gilang <span class="family-name"> Iqsa Mahendra</span></p>
+          <h1 class="mb-3 mt-5">
+            Gilang
+            <span class="family-name"> Iqsa Mahendra</span>
+          </h1>
+          <p class="mobile-profession">
+            Fresh Graduate || Tech Enthusiast
+          </p>
+          <h4 class="mb-4">
+            Fresh Graduate || Tech Enthusiast
+          </h4>
+
+          <p class="mb-3">
+            Recent Informatics graduate with basic knowledge in programming, web development, and database management. Eager to improve technical skills and work well in a team.
+          </p>
+          <p class="'mb-3">
+            Quick to adapt and always focused on learning and growing in the tech field.
+          </p>
+
+          <p>
+            <a href="https://drive.google.com/file/d/1KubvScM96680OR02-Wt4fCqV1irulg-N/view" target="_blank" download="resumeGilang.pdf" class="download-btn">
+              Get My Resume
+            </a>
+          </p>
+
+          
+          <!-- <p class="mb-5 mt-5">
+            <i class="fas fa-user-tag"></i> #savvy #motivated #communicative
+            #hard-working #cool-headed #organized #easy-going #funny
+          </p> -->
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="skills">
+        <h2 class="mb-5">SKILLS</h2>
+          <div id="skill-bars">
+            <p class="text-left">HTML5 - 70%</p>
+
+            <div class="progress mb-2" style="height: 1.5rem;">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 70%"
+              ></div>
+            </div>
+            <p class="text-left">CSS3 - 75%</p>
+
+            <div class="progress mb-2" style="height: 1.5rem;">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="75"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 75%"
+              ></div>
+            </div>
+            <p class="text-left">JavaScript - 50%</p>
+
+            <div class="progress mb-2" style="height: 1.5rem;">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 50%"
+              ></div>
+            </div>
+            <p class="text-left">Bootstrap 4 - 70%</p>
+
+            <div class="progress mb-5" style="height: 1.5rem;">
+              <div
+                class="progress-bar"
+                role="progressbar"
+                aria-valuenow="70"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                style="width: 70%"
+              ></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <p class="pt-3">
+          <i class="fas fa-user-tag"></i> #Organization
+          #TimeManagement #Communication
+        </p> -->
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="experience">
+        <h2 class="mb-4">EXPERIENCES</h2>
+
+        <div class="my-auto">
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-5">
+                <img
+                  class="card-img-top p-2"
+                  src="shinbo.png"
+                  alt="web-developer"
+                />
+
+                <div class="card-body pb-0">
+                  <p>April 2024 - June 2024</p>
+                  <h5 class="card-title">IT Support</h5>
+
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      Manage and maintain Company IT system 
+                    </li>
+                    <li class="list-group-item">
+                      Hardware and software instalation
+                    </li>
+                    <li class="list-group-item">
+                      Monitoring security IT system
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-5">
+                <img
+                  class="card-img-top p-2"
+                  src="JEL.png"
+                  alt="freelancing"
+                />
+                <div class="card-body pb-0">
+                  <p>January 2024 - March 2024</p>
+                  <h5 class="card-title">IT Support</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      Manage and maintain Company IT system 
+                    </li>
+                    <li class="list-group-item">
+                      Hardware and software instalation
+                    </li>
+                    <li class="list-group-item">
+                      Monitoring security IT system
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-5">
+                <img class="card-img-top" src="bps.png" alt="blogging" />
+                <div class="card-body pb-0">
+                  <p>July 2022 - September 2022</p>
+                  <h5 class="card-title">Code Editor</h5>
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      Gather and Verication Data related to Agriculture.
+                    </li>
+                    <li class="list-group-item">
+                      Update and arrange Agriculture statistic database.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="education">
+        <h2 class="mb-4">EDUCATIONS</h2>
+
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="card mb-4">
+              <div class="edu-icons">
+                <i class="fas fa-graduation-cap fa-5x edu-icons"></i>
+              </div>
+              <div class="card-body pb-0">
+                <p>2018 - 2024</p>
+                <h5 class="card-title">Universitas Teknologi Yogyakarta - Informatics</h5>
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">System Basis Data</li>
+                  <li class="list-group-item">Operation System</li>
+                  <li class="list-group-item">Web Programming</li>
+                  <li class="list-group-item">Mobile Programming</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="certificates">
+        <!-- <div class="my-auto"> -->
+        <div class="container">
+          <h2 class="mb-5">CERTIFICATES</h2>
+          <!-- <div class="row">
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-4">
+                <p class="edu-icons pt-4">
+                  <i class="fas fa-certificate fa-5x"></i>
+                </p>
+                <h5 class="pt-4">
+                  Frontend Academyy
+                </h5>
+                <div class="card-body">
+                  <p>Front End Developer</p>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-4">
+                <p class="edu-icons pt-4">
+                  <i class="fas fa-certificate fa-5x"></i>
+                </p>
+                <h5 class="pt-4">WebAcademy</h5>
+                <div class="card-body">
+                  Front-End Web Development
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="card mb-5">
+                <p class="edu-icons pt-4">
+                  <i class="fas fa-award fa-5x"></i>
+                </p>
+                <h5 class="pt-4">Award Academy</h5>
+                <div class="card-body">
+                  1 st Award
+                </div>
+                <p>"Resume of the Year"</p>
+              </div>
+            </div>
+          </div> -->
+          <div class="certificates-container">
+            <div class="certificate" onclick="toggleZoom(this)">
+              <img src="cert/coding-bootcamp.jpg" alt="Certificate" class="cert-image"/>
+              <h3>1. Coding Experience Bootcamp</h3>
+            </div>
+            <div class="certificate" onclick="toggleZoom(this)">
+              <img src="cert/icswl.jpg" alt="Certificate" class="cert-image"/>
+              <h3>2. ICSWL</h3>
+            </div>
+            <div class="certificate" onclick="toggleZoom(this)">
+              <img src="cert/Word-2019.jpg" alt="Certificate" class="cert-image"/>
+              <h3>3. Word 2019 Associate</h3>
+            </div>
+            <div class="certificate" onclick="toggleZoom(this)">
+              <img src="cert/Toefl.jpg" alt="Certificate" class="cert-image"/>
+              <h3>4. TOEFL</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5" id="contact">
+        <div class="my-auto">
+          <h2 class="mb-3">CONTACT</h2>
+
+          <ul class="fa-ul mb-4 ml-0">
+            <li id="mail-address">
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=gmahendra880@gmail.com&tf=cm" target="_blank">
+                <i class="fas fa-envelope-open mr-2"></i>gmahendra880@mail.com</a
+              >
+            </li>
+            <li><a href="https://wa.me/085732816613" target="_blank"><i class="fas fa-mobile-alt mr-2"></i>+62 857-3281-6613</li></a>
+            <li><a href="https://www.google.com/maps/place/7%C2%B018'22.8%22S+109%C2%B024'02.8%22E/@-7.306319,109.400789,17z/data=!3m1!4b1!4m4!3m3!8m2!3d-7.306319!4d109.400789?entry=ttu&g_ep=EgoyMDI1MDIwNS4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+              <i class="fas fa-map-marker-alt mr-2"></i>myLocation, World</li></a>
+          </ul>
+
+          <!-- <form
+            class="contact-form"
+            method="POST"
+            action="https://formspree.io/youremail@mail.com"
+          >
+            <div class="form-group">
+              <input
+                type="name"
+                class="form-control"
+                placeholder="Name"
+                name="name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Email"
+                name="name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <textarea
+                class="form-control"
+                type="text"
+                placeholder="Message"
+                rows="7"
+                name="name"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Submit</button>
+          </form> -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+    <!-- font-awesome script -->
+
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+      integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+  		function toggleContent(sectionId) {
+            var content = document.getElementById(sectionId);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+
+      function toggleZoom(certificate) {
+        // If the certificate is zoomed, remove the zoom class (zoom out)
+        if (certificate.classList.contains('zoomed')) {
+          certificate.classList.remove('zoomed');
+        } else {
+          // Remove the zoomed class from any other zoomed certificate
+          const allCertificates = document.querySelectorAll('.certificate');
+          allCertificates.forEach(cert => {
+            cert.classList.remove('zoomed');
+          });
+
+          // Add the zoom class to the clicked certificate (zoom in)
+          certificate.classList.add('zoomed');
+        }
+      }
+    </script>
+  </body>
+</html>
